@@ -97,11 +97,34 @@ header p {
     gap: 20px;
 }
 
+/* --- Main Content (The Floating Frames) --- */
+
+/* The actual "Liquid Glass" effect is added here */
 .info-panel {
     flex: 1; /* This makes all panels share the space equally */
-    background: rgba(40, 30, 50, 0.8); /* Dark purple, semi-transparent */
+    
+    /* 1. Frosted Glass/Liquid Effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For older Safari versions */
+    
+    /* 2. New, lighter semi-transparent background */
+    background: rgba(80, 60, 100, 0.7); /* Slightly lighter purple for better contrast */
+    
+    /* 3. Original Border and size properties */
     border: 4px solid #50394c;
     min-height: 300px;
+    
+    /* Optional: Adding a slight shadow for depth */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.info-panel h2 {
+    /* Keeping the header bar solid for structure */
+    background: #50394c; 
+    font-size: 1rem;
+    padding: 12px;
+    margin: 0;
+    text-align: center;
 }
 
 .info-panel h2 {
@@ -202,4 +225,5 @@ header p {
         flex-direction: column;
         gap: 15px;
     }
+
 }
